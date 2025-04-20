@@ -6,8 +6,7 @@ const path = require('path');
 module.exports = merge(common, {
     mode: 'production',
     output: {
-        clean: true,
-        publicPath: '/'
+        clean: true
     },
     plugins: [
         new CopyPlugin({
@@ -16,6 +15,10 @@ module.exports = merge(common, {
                     from: "img/optimized",
                     to: "img/optimized",
                     noErrorOnMissing: true
+                },
+                {
+                    from: "css",
+                    to: "css"
                 },
                 {
                     from: "*.{ico,png,svg,webmanifest}",

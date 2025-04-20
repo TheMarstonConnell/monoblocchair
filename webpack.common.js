@@ -6,12 +6,21 @@ module.exports = {
   output: {
     filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false // This prevents CSS url() from being processed, keeping our relative paths intact
+            }
+          }
+        ]
       }
     ],
   },
