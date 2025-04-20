@@ -1,0 +1,88 @@
+:root {
+    --background: #f4f1e9;
+    --text-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1;
+    padding: 2rem;
+}
+
+.hero {
+    padding: 0;
+    margin-bottom: 4rem;
+    background: none;
+    color: var(--text-color);
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 8vw;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-transform: none;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 400px;
+    margin: 0;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.masonry-grid {
+    columns: 1;
+    column-gap: 2rem;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.masonry-item::after {
+    content: attr(data-number);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--background);
+    padding: 0.25rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .masonry-grid {
+        columns: 2;
+    }
+}
+
+@media (min-width: 1200px) {
+    .masonry-grid {
+        columns: 3;
+    }
+} 
